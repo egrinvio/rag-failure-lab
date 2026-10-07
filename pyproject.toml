@@ -1,0 +1,31 @@
+[project]
+name = "rag-failure-lab"
+version = "0.1.0"
+description = "An engineering lab for diagnosing RAG failures across ingestion, retrieval, context assembly, and generation"
+readme = "README.md"
+authors = [
+    { name = "Egor Gridnev", email = "egrinvio@gmail.com" },
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.11",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
